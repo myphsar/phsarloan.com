@@ -27,7 +27,7 @@
       overscroll-behavior: none; /* Stops swipe-to-close behavior */
       position: fixed; /* Freezes the window layer */
     }
-    
+
     /* Targets the Flutter web host element specifically */
     flutter-view {
       overscroll-behavior: none !important;
@@ -35,25 +35,25 @@
   </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
-  <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
-  
-  <script>
-    function initTelegram() {
-      if (window.Telegram && window.Telegram.WebApp) {
-        window.Telegram.WebApp.ready();
-        window.Telegram.WebApp.expand(); // Forces full-screen mode immediately
-        
-        // Optional: Disables the vertical swipe-to-close gesture entirely if supported by Telegram client
-        if (window.Telegram.WebApp.isVerticalSwipesEnabled === true) {
-          window.Telegram.WebApp.disableVerticalSwipes();
-        }
+<script src="flutter_bootstrap.js" async></script>
+<script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+
+<script>
+  function initTelegram() {
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand(); // Forces full-screen mode immediately
+
+      // Optional: Disables the vertical swipe-to-close gesture entirely if supported by Telegram client
+      if (window.Telegram.WebApp.isVerticalSwipesEnabled === true) {
+        window.Telegram.WebApp.disableVerticalSwipes();
       }
     }
-    
-    // Run immediately and also on fallback load event
-    initTelegram();
-    window.addEventListener('load', initTelegram);
-  </script>
+  }
+
+  // Run immediately and also on fallback load event
+  initTelegram();
+  window.addEventListener('load', initTelegram);
+</script>
 </body>
 </html>
