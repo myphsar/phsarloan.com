@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+ 
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -43,5 +43,14 @@
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <script src="flutter_bootstrap.js" async></script>
+    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (window.Telegram && window.Telegram.WebApp) {
+        window.Telegram.WebApp.ready();
+        window.Telegram.WebApp.expand(); // Forces full-screen mode
+      }
+    });
+  </script>
 </body>
 </html>
